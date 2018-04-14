@@ -3,8 +3,8 @@
 Still work in progress.
 
 ## Open tasks
-- [ ] create simple server using flask
-- [ ] set up route for updating karma points
+- [x] create simple server using flask
+- [x] set up route for updating karma points
 - [ ] take care of persisting data
 - [ ] code cleanup
 - [ ] complete documentation
