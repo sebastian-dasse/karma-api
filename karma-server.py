@@ -3,6 +3,16 @@
 """
 TODO: comment
 
+inspired by:
+https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+
+--> CONTINUE READING AT:
+Improving the web service interface
+
+
+--> FOR FURTHER IMPROVEMENTS HAVE A LOOK AT:
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
 defines the following routes:
 
 GET    /yogis
