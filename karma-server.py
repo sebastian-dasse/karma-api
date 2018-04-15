@@ -27,6 +27,9 @@ from flask import Flask, jsonify, abort, make_response, request
 
 app = Flask(__name__)
 
+server_ip = "0.0.0.0"
+server_port = 5000
+
 
 base_url = "/karma/api/v1"
 
@@ -40,7 +43,10 @@ default_karma = 0
 
 @app.route("/")
 def index():
-  return "Hello, World!"
+  return (
+    "<h1>Welcome to the Karma API!</h1>"
+    "<p>You can query or update the yogis at <code>" + base_url + "/yogis</code></p>"
+  )
 
 
 @app.route(base_url + "/yogis", methods=["GET"])
@@ -98,7 +104,11 @@ def err_not_found(error):
 
 
 def main():
-  app.run(debug=True)
+  import sys
+  if len(sys.argv) > 1:
+    server_port = int(sys.argv[1])
+
+  app.run(host=server_ip, port=server_port, debug=True)
 
 
 if __name__ == '__main__':
