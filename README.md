@@ -38,11 +38,13 @@ To install on Windows do the following:
 
 ## The API
 
+```
 GET    /yogis
 GET    /yogis/<yid>
 POST   /yogis
 PUT    /yogis/<yid>
 DELETE /yogis/<yid>
+```
 
 All endpoints in more detail:
 
