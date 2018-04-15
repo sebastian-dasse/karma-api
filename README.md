@@ -34,3 +34,51 @@ To install on Windows do the following:
 8. To ensure that Flask was sucessfully installed check the output of: `pip list`.
 9. To start the karma-api server do the following ... TODO
 10. To deactivate *my_env* when you are done: `deactivate`.
+
+
+## The API
+
+GET    /yogis
+GET    /yogis/<yid>
+POST   /yogis
+PUT    /yogis/<yid>
+DELETE /yogis/<yid>
+
+All endpoints in more detail:
+
+#### GET /yogis
+
+To get all yogis:
+```
+curl -i http/<ip:port>/karma/api/v1/yogis
+```
+
+#### GET /yogis/<yid>
+
+To get a specific yogi:
+```
+curl -i http/<ip:port>/karma/api/v1/yogis/<yid>
+```
+
+##### POST /yogis
+
+To create a new yogi:
+```
+curl -i -H "Content-Type: application/json" -X POST -d '{"yid": <yid>}' http/<ip:port>/karma/api/v1/yogis
+```
+The newly created yogi will have 0 karma points by default. But you can create a yogi with a different default karma, if you wish:
+
+```
+curl -i -H "Content-Type: application/json" -X POST -d '{"yid": <yid>, "karma": <karma>}' http/<ip:port>/karma/api/v1/yogis
+```
+
+##### PUT /yogis/<yid>
+
+To update a yogi's karma, you have to send the karma points to be added:
+```
+curl -i -H "Content-Type: application/json" -X PUT -d '{"karma": <karma>}' http/<ip:port>/karma/api/v1/yogis/<yid>
+```
+
+##### DELETE /yogis/<yid>
+
+Coming soon ... TODO
